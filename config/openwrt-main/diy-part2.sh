@@ -23,7 +23,7 @@ echo "DISTRIB_SOURCECODE='official'" >>package/base-files/files/etc/openwrt_rele
 # ------------------------------- Other started -------------------------------
 #
 # Add luci-app-amlogic
-svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
+#svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
 
 # coolsnowwolf default software package replaced with Lienol related software package
 # rm -rf feeds/packages/utils/{containerd,libnetwork,runc,tini}
@@ -35,6 +35,8 @@ svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/
 # svn co https://github.com/libremesh/lime-packages/trunk/packages/{shared-state-pirania,pirania-app,pirania} package/lime-packages/packages
 # Add to compile options (Add related dependencies according to the requirements of the third-party software package Makefile)
 # sed -i "/DEFAULT_PACKAGES/ s/$/ pirania-app pirania ip6tables-mod-nat ipset shared-state-pirania uhttpd-mod-lua/" target/linux/armvirt/Makefile
+svn co https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
+svn co https://github.com/xiaorouji/openwrt-passwall2 package/openwrt-passwall2
 
 # Apply patch
 # git apply ../config/patches/{0001*,0002*}.patch --directory=feeds/luci
